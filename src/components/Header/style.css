@@ -1,0 +1,21 @@
+.container-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  width: 100%;
+  min-height: 300px;
+  max-height: 300px;
+  padding: 0 2rem;
+
+  background-image: url("../../assets/pattern-bg-mobile.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.container-header h1 {
+  padding-top: 20px;
+  font-size: 2.8rem;
+  color: white;
+}

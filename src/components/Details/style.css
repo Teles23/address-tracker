@@ -1,0 +1,32 @@
+.container-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 15px;
+  background-color: white;
+  width: 100%;
+  position: relative;
+  bottom: -30px;
+  z-index: 2;
+}
+.container-details p {
+  color: var(--dark-gray);
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.container-details b {
+  color: var(--very-dark-gray);
+  text-transform: capitalize;
+}
+.container-details div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
