@@ -1,25 +1,27 @@
+import useGlobalContext from "../../hooks/useGlobalContext";
 import "./style.css";
-const Details = () => {
+const Detalhes = () => {
+  const values = useGlobalContext();
   return (
     <div className="container-details">
       <div className="ip-address">
         <p>IP Address</p>
-        <b>192.168.0.34</b>
+        <b>{values?.details.ip}</b>
       </div>
       <div className="location">
         <p>Location</p>
-        <b>57.7517, -113.9351</b>
+        <b>{values?.details.location}</b>
       </div>
       <div className="timezone">
         <p>Time Zone</p>
-        <b>UTC-05:00</b>
+        <b>{values?.details.timezone}</b>
       </div>
       <div className="isp">
         <p>ISP</p>
-        <b>Bell Canada</b>
+        <b>{values?.details.isp}</b>
       </div>
     </div>
   );
 };
 
-export default Details;
+export default Detalhes;

@@ -1,20 +1,27 @@
 import { useState } from "react";
 import Arrow from "../../assets/icon-arrow.svg";
-import { ArrowIcon, InputField, StyledInput } from "./styledInput";
+import useGlobalContext from "../../hooks/useGlobalContext";
 import api from "../../services/api";
+import { ArrowIcon, InputField, StyledInput } from "./styledInput";
 const CustomInput = () => {
   const [inputValue, setInputValue] = useState("");
+  const values = useGlobalContext();
 
   const handleSubmit = async () => {
     const trimmedValue = inputValue.trim();
     if (trimmedValue) {
       try {
-        const response = await api.get("", {
+        const { data } = await api.get("", {
           params: {
             ipAddress: trimmedValue,
           },
         });
-        console.log(response);
+        values?.setDetails({
+          ip: data.ip,
+          isp: data.isp,
+          location: `${data.location.country} - ${data.location.region}`,
+          timezone: data.location.timezone,
+        });
       } catch (error) {
         console.log(error);
       }
