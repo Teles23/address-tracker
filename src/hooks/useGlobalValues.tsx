@@ -1,12 +1,5 @@
-import { Dispatch, SetStateAction, useState } from "react";
-import Details from "../types/details";
-
-export type UseGlobalValues =
-  | {
-      details: Details;
-      setDetails: Dispatch<SetStateAction<Details>>;
-    }
-  | undefined;
+import { useState } from "react";
+import { Details, UseGlobalValues } from "../types/details";
 
 export function useGlobalValues(): UseGlobalValues {
   const [details, setDetails] = useState<Details>({
@@ -14,6 +7,8 @@ export function useGlobalValues(): UseGlobalValues {
     timezone: "",
     isp: "",
     location: "",
+    lat: 0,
+    lng: 0,
   });
   return {
     details,

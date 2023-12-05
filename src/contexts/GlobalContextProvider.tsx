@@ -1,10 +1,6 @@
-import { ReactNode } from "react";
 import { useGlobalValues } from "../hooks/useGlobalValues";
+import { Props } from "../types/details";
 import GlobalContext from "./GlobalContext";
-
-type Props = {
-  children: ReactNode;
-};
 
 function GlobalContextProvider({ children }: Readonly<Props>) {
   const values = useGlobalValues();

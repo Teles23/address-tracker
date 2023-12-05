@@ -5,7 +5,7 @@ import api from "../../services/api";
 import { ArrowIcon, InputField, StyledInput } from "./styledInput";
 const CustomInput = () => {
   const [inputValue, setInputValue] = useState("");
-  const values = useGlobalContext();
+  const { setDetails } = useGlobalContext();
 
   const handleSubmit = async () => {
     const trimmedValue = inputValue.trim();
@@ -16,11 +16,14 @@ const CustomInput = () => {
             ipAddress: trimmedValue,
           },
         });
-        values?.setDetails({
+        console.log(data);
+        setDetails({
           ip: data.ip,
           isp: data.isp,
           location: `${data.location.country} - ${data.location.region}`,
           timezone: data.location.timezone,
+          lat: data.location.lat,
+          lng: data.location.lng,
         });
       } catch (error) {
         console.log(error);
