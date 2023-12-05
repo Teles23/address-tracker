@@ -33,6 +33,7 @@ const CustomInput = () => {
     <StyledInput>
       <InputField
         value={inputValue}
+        placeholder="Search for any IP address"
         onChange={(e) => setInputValue(e.target.value)}
       />
       <ArrowIcon onClick={handleSubmit}>
