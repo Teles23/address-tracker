@@ -16,11 +16,10 @@ const CustomInput = () => {
             ipAddress: trimmedValue,
           },
         });
-        console.log(data);
         setDetails({
           ip: data.ip,
           isp: data.isp,
-          location: `${data.location.country} - ${data.location.region}`,
+          location: `${data.location.region}, ${data.location.country} ${data.location.postalCode}`,
           timezone: data.location.timezone,
           lat: data.location.lat,
           lng: data.location.lng,

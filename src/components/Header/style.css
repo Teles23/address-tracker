@@ -19,3 +19,11 @@
   font-size: 2.8rem;
   color: white;
 }
+
+@media (min-width: 1300px) {
+  .container-header {
+    height: auto;
+    padding: 5rem 7rem;
+    background-image: url("../../assets/pattern-bg-desktop.png");
+  }
+}
